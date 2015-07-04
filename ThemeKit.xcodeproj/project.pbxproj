@@ -10,6 +10,12 @@
 		1751C1B11B486DC500611DC9 /* ThemeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1751C1B01B486DC500611DC9 /* ThemeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1751C1B81B486DC500611DC9 /* ThemeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1751C1AD1B486DC500611DC9 /* ThemeKit.framework */; };
 		1751C1BD1B486DC500611DC9 /* ThemeKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751C1BC1B486DC500611DC9 /* ThemeKitTests.swift */; };
+		1751C1C81B486DD500611DC9 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751C1C71B486DD500611DC9 /* Theme.swift */; };
+		1751C1CA1B486DF100611DC9 /* ThemeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751C1C91B486DF100611DC9 /* ThemeLoader.swift */; };
+		1751C1CC1B486E5100611DC9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751C1CB1B486E5100611DC9 /* Protocols.swift */; };
+		1751C1CE1B486E7900611DC9 /* ThemeWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751C1CD1B486E7900611DC9 /* ThemeWatcher.swift */; };
+		1751C1D01B486ECA00611DC9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751C1CF1B486ECA00611DC9 /* Extensions.swift */; };
+		1751C1D21B486EE800611DC9 /* ThemableProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751C1D11B486EE800611DC9 /* ThemableProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +35,12 @@
 		1751C1B71B486DC500611DC9 /* ThemeKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThemeKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1751C1BC1B486DC500611DC9 /* ThemeKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeKitTests.swift; sourceTree = "<group>"; };
 		1751C1BE1B486DC500611DC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1751C1C71B486DD500611DC9 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		1751C1C91B486DF100611DC9 /* ThemeLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeLoader.swift; sourceTree = "<group>"; };
+		1751C1CB1B486E5100611DC9 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		1751C1CD1B486E7900611DC9 /* ThemeWatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeWatcher.swift; sourceTree = "<group>"; };
+		1751C1CF1B486ECA00611DC9 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1751C1D11B486EE800611DC9 /* ThemableProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemableProperties.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +85,12 @@
 			children = (
 				1751C1B01B486DC500611DC9 /* ThemeKit.h */,
 				1751C1B21B486DC500611DC9 /* Info.plist */,
+				1751C1C71B486DD500611DC9 /* Theme.swift */,
+				1751C1C91B486DF100611DC9 /* ThemeLoader.swift */,
+				1751C1CB1B486E5100611DC9 /* Protocols.swift */,
+				1751C1CD1B486E7900611DC9 /* ThemeWatcher.swift */,
+				1751C1CF1B486ECA00611DC9 /* Extensions.swift */,
+				1751C1D11B486EE800611DC9 /* ThemableProperties.swift */,
 			);
 			path = ThemeKit;
 			sourceTree = "<group>";
@@ -142,6 +160,7 @@
 		1751C1A41B486DC500611DC9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Plover Productions";
 				TargetAttributes = {
@@ -193,6 +212,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1751C1D21B486EE800611DC9 /* ThemableProperties.swift in Sources */,
+				1751C1D01B486ECA00611DC9 /* Extensions.swift in Sources */,
+				1751C1CC1B486E5100611DC9 /* Protocols.swift in Sources */,
+				1751C1CA1B486DF100611DC9 /* ThemeLoader.swift in Sources */,
+				1751C1CE1B486E7900611DC9 /* ThemeWatcher.swift in Sources */,
+				1751C1C81B486DD500611DC9 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +332,7 @@
 		1751C1C21B486DC500611DC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -317,12 +343,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ploverproductions..ThemeKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		1751C1C31B486DC500611DC9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
