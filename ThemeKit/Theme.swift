@@ -191,7 +191,7 @@ public class Theme: NSObject {
             case "font": result[NSFontAttributeName] = themeDict.fontForKey(key)
             case "foregroundColor": result[NSForegroundColorAttributeName] = themeDict.colorForKey(key)
             case "backgroundColor": result[NSBackgroundColorAttributeName] = themeDict.colorForKey(key)
-            default: print("\(key) not yet supported for text attributes dictionary")
+            default: if (key == "fontSize") == false { print("\(key) not yet supported for text attributes dictionary") }
             }
         }
         return result

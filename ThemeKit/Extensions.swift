@@ -31,10 +31,13 @@ extension UIView:ThemeableView {
     public func setPropertiesFromTheme(theme:Theme) {
         let globalString = theme.stringForKey("globalStyle") ?? ""
         let finalTheme = theme.themeByCombiningWithTheme(theme.innerThemeForKey(globalString))
+        let ignoredProperties = Set(arrayLiteral: "fontSize", "globalStyle", "attributedTextAttributes")
         
         for k in finalTheme.keys {
             guard let  viewCase = ThemableViewProperties(rawValue: k) else {
-                print("\(k) is not impelmented for class \(self.dynamicType)")
+                if ignoredProperties.contains(k) == false {
+                    print("\(k) is not impelmented for class \(self.dynamicType)")
+                }
                 continue
             }
             switch viewCase {
