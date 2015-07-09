@@ -41,13 +41,13 @@ extension UIView:ThemeableView {
                 continue
             }
             switch viewCase {
-            case .backgroundColor: self.backgroundColor = finalTheme.colorForKey(k)
-            case .alpha: self.alpha = finalTheme.floatForKey(k)
-            case .cornerRadius: self.layer.cornerRadius = finalTheme.floatForKey(k)
-            case .borderWidth: self.layer.borderWidth = finalTheme.floatForKey(k)
-            case .borderColor: self.layer.borderColor = finalTheme.colorForKey(k).CGColor
-            case .tintColor: self.tintColor = finalTheme.colorForKey(k)
-            case .clipsToBounds: self.clipsToBounds = finalTheme.boolForKey(k)
+            case .backgroundColor: backgroundColor = finalTheme.colorForKey(k)
+            case .alpha: alpha = finalTheme.floatForKey(k)
+            case .cornerRadius: layer.cornerRadius = finalTheme.floatForKey(k)
+            case .borderWidth: layer.borderWidth = finalTheme.floatForKey(k)
+            case .borderColor: layer.borderColor = finalTheme.colorForKey(k).CGColor
+            case .tintColor: tintColor = finalTheme.colorForKey(k)
+            case .clipsToBounds: clipsToBounds = finalTheme.boolForKey(k)
             case .shadowColor: layer.shadowColor = finalTheme.colorForKey(k).CGColor
             case .shadowOpacity: layer.shadowOpacity = Float(finalTheme.floatForKey(k))
             case .shadowRadius: layer.shadowRadius = finalTheme.floatForKey(k)
@@ -73,10 +73,10 @@ public extension UILabel {
             }
             
             switch labelCase {
-            case .font: self.font = finalTheme.fontForKey(k)
-            case .textColor: self.textColor = finalTheme.colorForKey(k)
-            case .text: self.text = finalTheme.stringForKey(k)
-            case .textAlignment: self.textAlignment = finalTheme.textAlignmentForKey(k)
+            case .font: font = finalTheme.fontForKey(k)
+            case .textColor: textColor = finalTheme.colorForKey(k)
+            case .text: text = finalTheme.stringForKey(k)
+            case .textAlignment: textAlignment = finalTheme.textAlignmentForKey(k)
             case .attributedText: attributedText = finalTheme.attributedStringForKey(k)
             }
         }
@@ -92,7 +92,7 @@ public extension UIButton {
         let properties = themableProperties
         let superTheme = theme.removeKeys(Array(properties))
         super.setPropertiesFromTheme(superTheme)
-        self.titleLabel?.setPropertiesFromTheme(superTheme)
+        titleLabel?.setPropertiesFromTheme(superTheme)
         
         let globalString = theme.stringForKey("globalStyle") ?? ""
         let finalTheme = theme.themeByCombiningWithTheme(theme.innerThemeForKey(globalString))
