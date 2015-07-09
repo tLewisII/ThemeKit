@@ -7,29 +7,29 @@
 //
 
 public enum ThemableViewProperties:String, ThemableProperties {
-    case BackgroundColor = "backgroundColor"
-    case Alpha = "alpha"
-    case CornerRadius = "cornerRadius"
-    case BorderColor = "borderColor"
-    case BorderWidth = "borderWidth"
-    case TintColor = "tintColor"
-    case ClipsToBounds = "clipsToBounds"
-    case ShadowRadius = "shadowRadius"
-    case ShadowColor = "shadowColor"
-    case ShadowOpacity = "shadowOpacity"
+    case backgroundColor
+    case alpha
+    case cornerRadius
+    case borderColor
+    case borderWidth
+    case tintColor
+    case clipsToBounds
+    case shadowRadius
+    case shadowColor
+    case shadowOpacity
     
     static var allValues:Set<ThemableViewProperties> {
         let vals = [
-            BackgroundColor,
-            Alpha,
-            CornerRadius,
-            BorderColor,
-            BorderWidth,
-            TintColor,
-            ClipsToBounds,
-            ShadowRadius,
-            ShadowColor,
-            ShadowOpacity
+            backgroundColor,
+            alpha,
+            cornerRadius,
+            borderColor,
+            borderWidth,
+            tintColor,
+            clipsToBounds,
+            shadowRadius,
+            shadowColor,
+            shadowOpacity
         ]
         
         return Set(vals)
@@ -41,125 +41,142 @@ public enum ThemableViewProperties:String, ThemableProperties {
 }
 
 public enum ThemableLabelProperties:String, ThemableProperties {
-    case Font = "font"
-    case TextColor = "textColor"
-    case Text = "text"
-    case TextAlignment = "textAlignment"
-    case AttributedText = "attributedText"
+    case font
+    case textColor
+    case text
+    case textAlignment
+    case attributedText
     
     static var allValues:Set<ThemableLabelProperties> {
-        return Set([Font,TextColor,Text,TextAlignment,AttributedText])
+        return Set([font,textColor,text,textAlignment,attributedText])
     }
 }
 
 public enum ThemableButtonProperties:String, ThemableProperties {
-    case TitleForStateNormal = "titleForStateNormal"
-    case TitleForStateHighlighted = "titleForStateHighlighted"
-    case TitleForStateSelected = "titleForStateSelected"
-    case TitleForStateDisabled = "titleForStateDisabled"
-    case TitleColorForStateNormal = "titleColorForStateNormal"
-    case TitleColorForStateHighlighted = "titleColorForStateHighlighted"
-    case TitleColorForStateSelected = "titleColorForStateSelected"
-    case TitleColorForStateDisabled = "titleColorForStateDisabled"
-    case TitleShadowColorForStateNormal = "titleShadowColorForStateNormal"
-    case TitleShadowColorForStateHighlighted = "titleShadowColorForStateHighlighted"
-    case TitleShadowColorForStateSelected = "titleShadowColorForStateSelected"
-    case TitleShadowColorForStateDisabled = "titleShadowColorForStateDisabled"
-    case ImageForStateNormal = "imageForStateNormal"
-    case ImageForStateHighlighted = "imageForStateHighlighted"
-    case ImageForStateSelected = "imageForStateSelected"
-    case ImageForStateDisabled = "imageForStateDisabled"
-    case BackgroundImageForStateNormal = "backgroundImageForStateNormal"
-    case BackgroundImageForStateHighlighted = "backgroundImageForStateHighlighted"
-    case BackgroundImageForStateSelected = "backgroundImageForStateSelected"
-    case BackgroundImageForStateDisabled = "backgroundImageForStateDisabled"
-    case BackgroundColorForStateNormal = "backgroundColorForStateNormal"
-    case BackgroundColorForStateHighlighted = "backgroundColorForStateHighlighted"
-    case BackgroundColorForStateSelected = "backgroundColorForStateSelected"
-    case BackgroundColorForStateDisabled = "backgroundColorForStateDisabled"
+    case titleForStateNormal
+    case titleForStateHighlighted
+    case titleForStateSelected
+    case titleForStateDisabled
+    case titleColorForStateNormal
+    case titleColorForStateHighlighted
+    case titleColorForStateSelected
+    case titleColorForStateDisabled
+    case titleShadowColorForStateNormal
+    case titleShadowColorForStateHighlighted
+    case titleShadowColorForStateSelected
+    case titleShadowColorForStateDisabled
+    case imageForStateNormal
+    case imageForStateHighlighted
+    case imageForStateSelected
+    case imageForStateDisabled
+    case backgroundImageForStateNormal
+    case backgroundImageForStateHighlighted
+    case backgroundImageForStateSelected
+    case backgroundImageForStateDisabled
+    case backgroundColorForStateNormal
+    case backgroundColorForStateHighlighted
+    case backgroundColorForStateSelected
+    case backgroundColorForStateDisabled
     
     static var allValues:Set<ThemableButtonProperties> {
         let vals = [
-            TitleForStateNormal,
-            TitleForStateHighlighted,
-            TitleForStateSelected,
-            TitleForStateDisabled,
-            TitleColorForStateNormal,
-            TitleColorForStateHighlighted,
-            TitleColorForStateSelected,
-            TitleColorForStateDisabled,
-            TitleShadowColorForStateNormal,
-            TitleShadowColorForStateHighlighted,
-            TitleShadowColorForStateSelected,
-            TitleShadowColorForStateDisabled,
-            ImageForStateNormal,
-            ImageForStateHighlighted,
-            ImageForStateSelected,
-            ImageForStateDisabled,
-            BackgroundImageForStateNormal,
-            BackgroundImageForStateHighlighted,
-            BackgroundImageForStateSelected,
-            BackgroundImageForStateDisabled,
-            BackgroundColorForStateNormal,
-            BackgroundColorForStateHighlighted,
-            BackgroundColorForStateSelected,
-            BackgroundColorForStateDisabled
+            titleForStateNormal,
+            titleForStateHighlighted,
+            titleForStateSelected,
+            titleForStateDisabled,
+            titleColorForStateNormal,
+            titleColorForStateHighlighted,
+            titleColorForStateSelected,
+            titleColorForStateDisabled,
+            titleShadowColorForStateNormal,
+            titleShadowColorForStateHighlighted,
+            titleShadowColorForStateSelected,
+            titleShadowColorForStateDisabled,
+            imageForStateNormal,
+            imageForStateHighlighted,
+            imageForStateSelected,
+            imageForStateDisabled,
+            backgroundImageForStateNormal,
+            backgroundImageForStateHighlighted,
+            backgroundImageForStateSelected,
+            backgroundImageForStateDisabled,
+            backgroundColorForStateNormal,
+            backgroundColorForStateHighlighted,
+            backgroundColorForStateSelected,
+            backgroundColorForStateDisabled
         ]
         return Set(vals)
     }
 }
 
 public enum ThemableImageViewProperties:String, ThemableProperties {
-    case Image = "image"
-    case HighlightedImage = "highlightedImage"
-    case Highlighted = "highlighted"
+    case image
+    case highlightedImage
+    case highlighted
     
     static var allValues:Set<ThemableImageViewProperties> {
-        return Set([Image,HighlightedImage,Highlighted])
+        return Set([image,highlightedImage,highlighted])
     }
 }
 
 public enum ThemableTextFieldProperties:String, ThemableProperties {
-    case Text = "text"
-    case AttributedText = "attributedText"
-    case Placeholder = "placeholder"
-    case AttributedPlaceholder = "attributedPlaceholder"
-    case Font = "font"
-    case TextColor = "textColor"
-    case TextAlignment = "textAlignment"
-    case BorderStyle = "borderStyle"
-    case Background = "background"
-    case DisabledBackground = "disabledBackground"
+    case text
+    case attributedText
+    case placeholder
+    case attributedPlaceholder
+    case font
+    case textColor
+    case textAlignment
+    case borderStyle
+    case background
+    case disabledBackground
     
     static var allValues:Set<ThemableTextFieldProperties> {
-        return Set([Text,AttributedText,AttributedPlaceholder,Placeholder,Font,TextAlignment,TextColor,BorderStyle,Background,DisabledBackground])
+        return Set([
+            text,
+            attributedText,
+            attributedPlaceholder,
+            placeholder,
+            font,
+            textAlignment,
+            textColor,
+            borderStyle,
+            background,
+            disabledBackground])
     }
 }
 
 public enum ThemableNavigationBarProperties:String, ThemableProperties {
-    case BarTintColor = "barTintColor"
-    case ShadowImage = "shadowImage"
-    case BackIndicatorImage = "backIndicatorImage"
-    case BackIndicatorTransitionMaskImage = "backIndicatorTransitionMaskImage"
-    case Translucent = "translucent"
-    case TitleTextAttributes = "titleTextAttributes"
-    case BackgroundImageForBarMetricsDefault = "backgroundImageForBarMetricsDefault"
-    case BackgroundImageForBarMetricsCompact = "backgroundImageForBarMetricsCompact"
+    case barTintColor
+    case shadowImage
+    case backIndicatorImage
+    case backIndicatorTransitionMaskImage
+    case translucent
+    case titleTextAttributes
+    case backgroundImageForBarMetricsDefault
+    case backgroundImageForBarMetricsCompact
     
     static var allValues:Set<ThemableNavigationBarProperties> {
-        return Set([BarTintColor,ShadowImage,BackIndicatorImage,BackIndicatorTransitionMaskImage,Translucent,TitleTextAttributes,BackgroundImageForBarMetricsDefault,BackgroundImageForBarMetricsCompact])
+        return Set([barTintColor,
+            shadowImage,
+            backIndicatorImage,
+            backIndicatorTransitionMaskImage,
+            translucent,
+            titleTextAttributes,
+            backgroundImageForBarMetricsDefault,
+            backgroundImageForBarMetricsCompact])
     }
 }
 
 
 public enum ThemableTableViewProperties:String, ThemableProperties {
-    case RowHeight = "rowHeight"
-    case SeparatorColor = "separatorColor"
-    case SeparatorStyle = "separatorStyle"
-    case SeparatorInset = "separatorInset"
+    case rowHeight
+    case separatorColor
+    case separatorStyle
+    case separatorInset
     
     static var allValues:Set<ThemableTableViewProperties> {
-        return Set([RowHeight,SeparatorColor,SeparatorStyle,SeparatorInset])
+        return Set([rowHeight,separatorColor,separatorStyle,separatorInset])
     }
 }
 

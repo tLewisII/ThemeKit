@@ -41,16 +41,16 @@ extension UIView:ThemeableView {
                 continue
             }
             switch viewCase {
-            case .BackgroundColor: self.backgroundColor = finalTheme.colorForKey(k)
-            case .Alpha: self.alpha = finalTheme.floatForKey(k)
-            case .CornerRadius: self.layer.cornerRadius = finalTheme.floatForKey(k)
-            case .BorderWidth: self.layer.borderWidth = finalTheme.floatForKey(k)
-            case .BorderColor: self.layer.borderColor = finalTheme.colorForKey(k).CGColor
-            case .TintColor: self.tintColor = finalTheme.colorForKey(k)
-            case .ClipsToBounds: self.clipsToBounds = finalTheme.boolForKey(k)
-            case .ShadowColor: layer.shadowColor = finalTheme.colorForKey(k).CGColor
-            case .ShadowOpacity: layer.shadowOpacity = Float(finalTheme.floatForKey(k))
-            case .ShadowRadius: layer.shadowRadius = finalTheme.floatForKey(k)
+            case .backgroundColor: self.backgroundColor = finalTheme.colorForKey(k)
+            case .alpha: self.alpha = finalTheme.floatForKey(k)
+            case .cornerRadius: self.layer.cornerRadius = finalTheme.floatForKey(k)
+            case .borderWidth: self.layer.borderWidth = finalTheme.floatForKey(k)
+            case .borderColor: self.layer.borderColor = finalTheme.colorForKey(k).CGColor
+            case .tintColor: self.tintColor = finalTheme.colorForKey(k)
+            case .clipsToBounds: self.clipsToBounds = finalTheme.boolForKey(k)
+            case .shadowColor: layer.shadowColor = finalTheme.colorForKey(k).CGColor
+            case .shadowOpacity: layer.shadowOpacity = Float(finalTheme.floatForKey(k))
+            case .shadowRadius: layer.shadowRadius = finalTheme.floatForKey(k)
             }
         }
     }
@@ -73,11 +73,11 @@ public extension UILabel {
             }
             
             switch labelCase {
-            case .Font: self.font = finalTheme.fontForKey(k)
-            case .TextColor: self.textColor = finalTheme.colorForKey(k)
-            case .Text: self.text = finalTheme.stringForKey(k)
-            case .TextAlignment: self.textAlignment = finalTheme.textAlignmentForKey(k)
-            case .AttributedText: attributedText = finalTheme.attributedStringForKey(k)
+            case .font: self.font = finalTheme.fontForKey(k)
+            case .textColor: self.textColor = finalTheme.colorForKey(k)
+            case .text: self.text = finalTheme.stringForKey(k)
+            case .textAlignment: self.textAlignment = finalTheme.textAlignmentForKey(k)
+            case .attributedText: attributedText = finalTheme.attributedStringForKey(k)
             }
         }
     }
@@ -103,30 +103,30 @@ public extension UIButton {
             }
             
             switch buttonCase {
-            case .TitleForStateNormal: setTitle(finalTheme.stringForKey(k), forState: .Normal)
-            case .TitleForStateHighlighted: setTitle(finalTheme.stringForKey(k), forState: .Highlighted)
-            case .TitleForStateSelected: setTitle(finalTheme.stringForKey(k), forState: .Selected)
-            case .TitleForStateDisabled: setTitle(finalTheme.stringForKey(k), forState: .Disabled)
-            case .TitleColorForStateNormal: setTitleColor(finalTheme.colorForKey(k), forState: .Normal)
-            case .TitleColorForStateHighlighted: setTitleColor(finalTheme.colorForKey(k), forState: .Highlighted)
-            case .TitleColorForStateSelected: setTitleColor(finalTheme.colorForKey(k), forState: .Selected)
-            case .TitleColorForStateDisabled: setTitleColor(finalTheme.colorForKey(k), forState: .Disabled)
-            case .TitleShadowColorForStateNormal: setTitleShadowColor(finalTheme.colorForKey(k), forState: .Normal)
-            case .TitleShadowColorForStateHighlighted: setTitleShadowColor(finalTheme.colorForKey(k), forState: .Highlighted)
-            case .TitleShadowColorForStateSelected: setTitleShadowColor(finalTheme.colorForKey(k), forState: .Selected)
-            case .TitleShadowColorForStateDisabled: setTitleShadowColor(finalTheme.colorForKey(k), forState: .Disabled)
-            case .ImageForStateNormal: setImage(finalTheme.imageForKey(k), forState: .Normal)
-            case .ImageForStateHighlighted: setImage(finalTheme.imageForKey(k), forState: .Highlighted)
-            case .ImageForStateSelected: setImage(finalTheme.imageForKey(k), forState: .Selected)
-            case .ImageForStateDisabled: setImage(finalTheme.imageForKey(k), forState: .Disabled)
-            case .BackgroundImageForStateNormal: setBackgroundImage(finalTheme.imageForKey(k), forState: .Normal)
-            case .BackgroundImageForStateHighlighted: setBackgroundImage(finalTheme.imageForKey(k), forState: .Highlighted)
-            case .BackgroundImageForStateSelected: setBackgroundImage(finalTheme.imageForKey(k), forState: .Selected)
-            case .BackgroundImageForStateDisabled: setBackgroundImage(finalTheme.imageForKey(k), forState: .Disabled)
-            case .BackgroundColorForStateNormal: setBackgroundImage(UIImage._imageWithColor(finalTheme.colorForKey(k)), forState: .Normal)
-            case .BackgroundColorForStateHighlighted: setBackgroundImage(UIImage._imageWithColor(finalTheme.colorForKey(k)), forState: .Highlighted)
-            case .BackgroundColorForStateSelected: setBackgroundImage(UIImage._imageWithColor(finalTheme.colorForKey(k)), forState: .Selected)
-            case .BackgroundColorForStateDisabled: setBackgroundImage(UIImage._imageWithColor(finalTheme.colorForKey(k)), forState: .Disabled)
+            case .titleForStateNormal: setTitle(finalTheme.stringForKey(k), forState: .Normal)
+            case .titleForStateHighlighted: setTitle(finalTheme.stringForKey(k), forState: .Highlighted)
+            case .titleForStateSelected: setTitle(finalTheme.stringForKey(k), forState: .Selected)
+            case .titleForStateDisabled: setTitle(finalTheme.stringForKey(k), forState: .Disabled)
+            case .titleColorForStateNormal: setTitleColor(finalTheme.colorForKey(k), forState: .Normal)
+            case .titleColorForStateHighlighted: setTitleColor(finalTheme.colorForKey(k), forState: .Highlighted)
+            case .titleColorForStateSelected: setTitleColor(finalTheme.colorForKey(k), forState: .Selected)
+            case .titleColorForStateDisabled: setTitleColor(finalTheme.colorForKey(k), forState: .Disabled)
+            case .titleShadowColorForStateNormal: setTitleShadowColor(finalTheme.colorForKey(k), forState: .Normal)
+            case .titleShadowColorForStateHighlighted: setTitleShadowColor(finalTheme.colorForKey(k), forState: .Highlighted)
+            case .titleShadowColorForStateSelected: setTitleShadowColor(finalTheme.colorForKey(k), forState: .Selected)
+            case .titleShadowColorForStateDisabled: setTitleShadowColor(finalTheme.colorForKey(k), forState: .Disabled)
+            case .imageForStateNormal: setImage(finalTheme.imageForKey(k), forState: .Normal)
+            case .imageForStateHighlighted: setImage(finalTheme.imageForKey(k), forState: .Highlighted)
+            case .imageForStateSelected: setImage(finalTheme.imageForKey(k), forState: .Selected)
+            case .imageForStateDisabled: setImage(finalTheme.imageForKey(k), forState: .Disabled)
+            case .backgroundImageForStateNormal: setBackgroundImage(finalTheme.imageForKey(k), forState: .Normal)
+            case .backgroundImageForStateHighlighted: setBackgroundImage(finalTheme.imageForKey(k), forState: .Highlighted)
+            case .backgroundImageForStateSelected: setBackgroundImage(finalTheme.imageForKey(k), forState: .Selected)
+            case .backgroundImageForStateDisabled: setBackgroundImage(finalTheme.imageForKey(k), forState: .Disabled)
+            case .backgroundColorForStateNormal: setBackgroundImage(UIImage._imageWithColor(finalTheme.colorForKey(k)), forState: .Normal)
+            case .backgroundColorForStateHighlighted: setBackgroundImage(UIImage._imageWithColor(finalTheme.colorForKey(k)), forState: .Highlighted)
+            case .backgroundColorForStateSelected: setBackgroundImage(UIImage._imageWithColor(finalTheme.colorForKey(k)), forState: .Selected)
+            case .backgroundColorForStateDisabled: setBackgroundImage(UIImage._imageWithColor(finalTheme.colorForKey(k)), forState: .Disabled)
             }
         }
     }
@@ -151,9 +151,9 @@ public extension UIImageView {
             }
             
             switch imageCase {
-            case .Image: image = finalTheme.imageForKey(k)
-            case .HighlightedImage: highlightedImage = finalTheme.imageForKey(k)
-            case .Highlighted: highlighted = finalTheme.boolForKey(k)
+            case .image: image = finalTheme.imageForKey(k)
+            case .highlightedImage: highlightedImage = finalTheme.imageForKey(k)
+            case .highlighted: highlighted = finalTheme.boolForKey(k)
             }
         }
     }
@@ -178,16 +178,16 @@ public extension UITextField {
             }
             
             switch textFieldCase {
-            case .Text: text = finalTheme.stringForKey(k)
-            case .AttributedText: attributedText = finalTheme.attributedStringForKey(k)
-            case .Placeholder: placeholder = finalTheme.stringForKey(k)
-            case .AttributedPlaceholder: attributedPlaceholder = finalTheme.attributedStringForKey(k)
-            case .TextAlignment: textAlignment = finalTheme.textAlignmentForKey(k)
-            case .Background: background = finalTheme.imageForKey(k)
-            case .DisabledBackground: disabledBackground = finalTheme.imageForKey(k)
-            case .BorderStyle: borderStyle = finalTheme.textFieldBorderStyleForKey(k)
-            case .Font: font = finalTheme.fontForKey(k)
-            case .TextColor: textColor = finalTheme.colorForKey(k)
+            case .text: text = finalTheme.stringForKey(k)
+            case .attributedText: attributedText = finalTheme.attributedStringForKey(k)
+            case .placeholder: placeholder = finalTheme.stringForKey(k)
+            case .attributedPlaceholder: attributedPlaceholder = finalTheme.attributedStringForKey(k)
+            case .textAlignment: textAlignment = finalTheme.textAlignmentForKey(k)
+            case .background: background = finalTheme.imageForKey(k)
+            case .disabledBackground: disabledBackground = finalTheme.imageForKey(k)
+            case .borderStyle: borderStyle = finalTheme.textFieldBorderStyleForKey(k)
+            case .font: font = finalTheme.fontForKey(k)
+            case .textColor: textColor = finalTheme.colorForKey(k)
             }
         }
     }
@@ -212,14 +212,14 @@ public extension UINavigationBar {
             }
             
             switch navigationBarCase {
-            case .BarTintColor: barTintColor = finalTheme.colorForKey(k)
-            case .ShadowImage: shadowImage = finalTheme.imageForKey(k)
-            case .BackIndicatorImage: backIndicatorImage = finalTheme.imageForKey(k)
-            case .BackIndicatorTransitionMaskImage: backIndicatorTransitionMaskImage = finalTheme.imageForKey(k)
-            case .Translucent: translucent = finalTheme.boolForKey(k)
-            case .TitleTextAttributes: titleTextAttributes = finalTheme.textAttributesDictionaryForKey(k)
-            case .BackgroundImageForBarMetricsDefault: setBackgroundImage(finalTheme.imageForKey(k), forBarMetrics: .Default)
-            case .BackgroundImageForBarMetricsCompact: setBackgroundImage(finalTheme.imageForKey(k), forBarMetrics: .Compact)
+            case .barTintColor: barTintColor = finalTheme.colorForKey(k)
+            case .shadowImage: shadowImage = finalTheme.imageForKey(k)
+            case .backIndicatorImage: backIndicatorImage = finalTheme.imageForKey(k)
+            case .backIndicatorTransitionMaskImage: backIndicatorTransitionMaskImage = finalTheme.imageForKey(k)
+            case .translucent: translucent = finalTheme.boolForKey(k)
+            case .titleTextAttributes: titleTextAttributes = finalTheme.textAttributesDictionaryForKey(k)
+            case .backgroundImageForBarMetricsDefault: setBackgroundImage(finalTheme.imageForKey(k), forBarMetrics: .Default)
+            case .backgroundImageForBarMetricsCompact: setBackgroundImage(finalTheme.imageForKey(k), forBarMetrics: .Compact)
             }
         }
     }
@@ -244,10 +244,10 @@ public extension UITableView {
             }
             
             switch tableViewCase {
-            case .SeparatorColor: separatorColor = finalTheme.colorForKey(k)
-            case .SeparatorInset: separatorInset = finalTheme.edgeInsetsForKey(k)
-            case .SeparatorStyle: separatorStyle = finalTheme.tableViewSeparatorStyleForKey(k)
-            case .RowHeight: rowHeight = finalTheme.floatForKey(k)
+            case .separatorColor: separatorColor = finalTheme.colorForKey(k)
+            case .separatorInset: separatorInset = finalTheme.edgeInsetsForKey(k)
+            case .separatorStyle: separatorStyle = finalTheme.tableViewSeparatorStyleForKey(k)
+            case .rowHeight: rowHeight = finalTheme.floatForKey(k)
             }
         }
     }
