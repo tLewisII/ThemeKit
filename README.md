@@ -2,6 +2,8 @@ ThemeKit
 ===========
 A protocol that allows attributes like fonts, colors, corner radii and such to be applied through a plist, with virtually no code needed to be written in app to support it. Also supports live theming, so changes made to the plist at runtime are reflected in the app immediately. The plist stuff is a port of [DB5](https://github.com/quartermaster/DB5), and the live theming idea is taken from [Pixate](https://github.com/Pixate/pixate-freestyle-ios).
 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 Usage
 ===========
 There is one protocol that you need to conform to, `Themable`. There are no methods to implement, and you only need to call `applyTheme()` whenever you want attributes to be applied, and optionally, `registerForThemeChanges()` if you want to be able to support live updating of the theme plist.
@@ -155,3 +157,7 @@ Supported Properties
 
 
 More coming soon!
+
+Installation
+===========
+You can install ThemeKit with [Carthage](https://github.com/Carthage/Carthage) by putting `github "tLewisii/ThemeKit" "master"` into your Cartfile.
