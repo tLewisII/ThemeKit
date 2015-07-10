@@ -52,6 +52,13 @@ class ViewController: UIViewController, Themable {
 }
 ```
 
+Global Styles
+===========
+To avoid duplication, you can specify global styles, rather than repeating attributes for similarly styled items. These global styles go under a dictionary in the plist named `Default` and can be referenced for any property with the `globalStyle` key, where the value is the key of the style you are referencing from the `Default` dictionary. that looks like this:
+
+![img](globalStyles.png)
+
+
 Live Changes
 ===========
 To be able to change the theme at runtime, you need to call `ThemeWatcher.sharedInstance.watch()` in your app delegate. You also need to specify the path to the plist file on your mac in an environment variable named `ThemePath`. That looks like this:
@@ -91,10 +98,16 @@ Supported Properties
 
 ###UILabel
 * font
+* fontSize* must be specified, or font size of `font` property defaults to 15
 * textColor
 * text
 * textAlignment
 * attributedText
+  * attributedTextAttributes
+    * font
+    * fontSize* must be specified, or font size of `font` property defaults to 15
+    * foregroundColor
+    * backgroundColor
 
 ###UIButton
 * titleForStateNormal
@@ -133,6 +146,7 @@ Supported Properties
 * placeholder
 * attributedPlaceholder
 * font
+* fontSize* must be specified, or font size of `font` property defaults to 15
 * textColor
 * textAlignment
 * borderStyle
