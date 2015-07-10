@@ -200,6 +200,56 @@ public enum ThemableSwitchProperties:String, ThemableProperties {
     }
 }
 
+public enum ThemableSliderProperties:String, ThemableProperties {
+    case value
+    case minimumValue
+    case maximumValue
+    case continuous
+    case minimumValueImage
+    case maximumValueImage
+    case minimumTrackTintColor
+    case maximumTrackTintColor
+    case thumbTintColor
+    case thumbImageForStateNormal
+    case thumbImageForStateHighlighted
+    case thumbImageForStateSelected
+    case thumbImageForStateDisabled
+    case minimumTrackImageForStateNormal
+    case minimumTrackImageForStateHighlighted
+    case minimumTrackImageForStateSelected
+    case minimumTrackImageForStateDisabled
+    case maximumTrackImageForStateNormal
+    case maximumTrackImageForStateHighlighted
+    case maximumTrackImageForStateSelected
+    case maximumTrackImageForStateDisabled
+    
+    static var allValues:Set<ThemableSliderProperties> {
+        return Set([
+            value,
+            minimumValue,
+            maximumValue,
+            continuous,
+            minimumValueImage,
+            maximumValueImage,
+            minimumTrackTintColor,
+            maximumTrackTintColor,
+            thumbTintColor,
+            thumbImageForStateNormal,
+            thumbImageForStateHighlighted,
+            thumbImageForStateSelected,
+            thumbImageForStateDisabled,
+            minimumTrackImageForStateNormal,
+            minimumTrackImageForStateHighlighted,
+            minimumTrackImageForStateSelected,
+            minimumTrackImageForStateDisabled,
+            maximumTrackImageForStateNormal,
+            maximumTrackImageForStateHighlighted,
+            maximumTrackImageForStateSelected,
+            maximumTrackImageForStateDisabled
+            ])
+    }
+}
+
 
 
 

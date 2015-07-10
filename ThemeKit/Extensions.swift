@@ -283,5 +283,50 @@ public extension UISwitch {
     }
 }
 
+public extension UISlider {
+    override public var themableProperties:Set<String> {
+        return Set(ThemableSliderProperties.allValues.map { $0.rawValue })
+    }
+    
+    override public func setPropertiesFromTheme(theme: Theme) {
+        let properties = themableProperties
+        let superTheme = theme.removeKeys(Array(properties))
+        super.setPropertiesFromTheme(superTheme)
+        
+        let globalString = theme.stringForKey("globalStyle") ?? ""
+        let finalTheme = theme.themeByCombiningWithTheme(theme.innerThemeForKey(globalString))
+        
+        for k in properties.intersect(finalTheme.keys) {
+            guard let sliderCase = ThemableSliderProperties(rawValue: k) else {
+                continue
+            }
+            
+            switch sliderCase {
+            case .value: value = Float(finalTheme.floatForKey(k))
+            case .minimumValue: minimumValue = Float(finalTheme.floatForKey(k))
+            case .maximumValue: maximumValue = Float(finalTheme.floatForKey(k))
+            case .continuous: continuous = finalTheme.boolForKey(k)
+            case .minimumValueImage: minimumValueImage = finalTheme.imageForKey(k)
+            case .maximumValueImage: maximumValueImage = finalTheme.imageForKey(k)
+            case .minimumTrackTintColor: minimumTrackTintColor = finalTheme.colorForKey(k)
+            case .maximumTrackTintColor: maximumTrackTintColor = finalTheme.colorForKey(k)
+            case .minimumTrackImageForStateNormal: setMinimumTrackImage(finalTheme.imageForKey(k), forState: .Normal)
+            case .minimumTrackImageForStateHighlighted: setMinimumTrackImage(finalTheme.imageForKey(k), forState: .Highlighted)
+            case .minimumTrackImageForStateSelected: setMinimumTrackImage(finalTheme.imageForKey(k), forState: .Selected)
+            case .minimumTrackImageForStateDisabled: setMinimumTrackImage(finalTheme.imageForKey(k), forState: .Disabled)
+            case .maximumTrackImageForStateNormal: setMaximumTrackImage(finalTheme.imageForKey(k), forState: .Normal)
+            case .maximumTrackImageForStateHighlighted: setMaximumTrackImage(finalTheme.imageForKey(k), forState: .Highlighted)
+            case .maximumTrackImageForStateSelected: setMaximumTrackImage(finalTheme.imageForKey(k), forState: .Selected)
+            case .maximumTrackImageForStateDisabled: setMaximumTrackImage(finalTheme.imageForKey(k), forState: .Disabled)
+            case .thumbImageForStateNormal: setThumbImage(finalTheme.imageForKey(k), forState: .Normal)
+            case .thumbImageForStateHighlighted: setThumbImage(finalTheme.imageForKey(k), forState: .Highlighted)
+            case .thumbImageForStateSelected: setThumbImage(finalTheme.imageForKey(k), forState: .Selected)
+            case .thumbImageForStateDisabled: setThumbImage(finalTheme.imageForKey(k), forState: .Disabled)
+            case .thumbTintColor: thumbTintColor = finalTheme.colorForKey(k)
+            }
+        }
+    }
+}
+
 
 

@@ -170,12 +170,37 @@ Supported Properties
 * separatorInset
 
 ###UISwitch
+
 * on
 * onTintColor
 * tintColor
 * thumbTintColor
 * onImage
 * offImage
+
+###UISlider
+
+* value
+* minimumValue
+* maximumValue
+* continuous
+* minimumValueImage
+* maximumValueImage
+* minimumTrackTintColor
+* maximumTrackTintColor
+* thumbTintColor
+* thumbImageForStateNormal
+* thumbImageForStateHighlighted
+* thumbImageForStateSelected
+* thumbImageForStateDisabled
+* minimumTrackImageForStateNormal
+* minimumTrackImageForStateHighlighted
+* minimumTrackImageForStateSelected
+* minimumTrackImageForStateDisabled
+* maximumTrackImageForStateNormal
+* maximumTrackImageForStateHighlighted
+* maximumTrackImageForStateSelected
+* maximumTrackImageForStateDisabled
 
 
 More coming soon!
