@@ -180,6 +180,26 @@ public enum ThemableTableViewProperties:String, ThemableProperties {
     }
 }
 
+public enum ThemableSwitchProperties:String, ThemableProperties {
+    case on
+    case onTintColor
+    case tintColor
+    case thumbTintColor
+    case onImage
+    case offImage
+    
+    static var allValues:Set<ThemableSwitchProperties> {
+        return Set([
+            on,
+            onTintColor,
+            tintColor,
+            thumbTintColor,
+            onImage,
+            offImage
+            ])
+    }
+}
+
 
 
 

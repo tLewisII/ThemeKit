@@ -253,5 +253,35 @@ public extension UITableView {
     }
 }
 
+public extension UISwitch {
+    override public var themableProperties:Set<String> {
+        return Set(ThemableSwitchProperties.allValues.map { $0.rawValue })
+    }
+    
+    override public func setPropertiesFromTheme(theme: Theme) {
+        let properties = themableProperties
+        let superTheme = theme.removeKeys(Array(properties))
+        super.setPropertiesFromTheme(superTheme)
+        
+        let globalString = theme.stringForKey("globalStyle") ?? ""
+        let finalTheme = theme.themeByCombiningWithTheme(theme.innerThemeForKey(globalString))
+        
+        for k in properties.intersect(finalTheme.keys) {
+            guard let switchCase = ThemableSwitchProperties(rawValue: k) else {
+                continue
+            }
+            
+            switch switchCase {
+            case .on: on = finalTheme.boolForKey(k)
+            case .onTintColor: onTintColor = finalTheme.colorForKey(k)
+            case .thumbTintColor: thumbTintColor = finalTheme.colorForKey(k)
+            case .tintColor: tintColor = finalTheme.colorForKey(k)
+            case .onImage: onImage = finalTheme.imageForKey(k)
+            case .offImage: offImage = finalTheme.imageForKey(k)
+            }
+        }
+    }
+}
+
 
 

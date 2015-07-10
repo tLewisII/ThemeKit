@@ -169,9 +169,19 @@ Supported Properties
 * separatorStyle
 * separatorInset
 
+###UISwitch
+* on
+* onTintColor
+* tintColor
+* thumbTintColor
+* onImage
+* offImage
+
 
 More coming soon!
 
 Installation
 ===========
+ThemeKit requires Xcode 7 Beta 3.
+
 You can install ThemeKit with [Carthage](https://github.com/Carthage/Carthage) by putting `github "tLewisii/ThemeKit" "master"` into your Cartfile.
