@@ -59,8 +59,8 @@ public extension Themable {
     }
     
     public var currentTheme:Theme? {
-        let ref = reflect(self)
-        let typeString = String(ref.valueType)
+        let ref = Mirror(reflecting:self)
+        let typeString = String(ref.subjectType)
         let chars = typeString.characters
         // remove module name
         let defaultThemeName = chars.indexOf(".").map { typeString.substringFromIndex($0.successor()) }
